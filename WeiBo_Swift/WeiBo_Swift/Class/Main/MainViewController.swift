@@ -25,12 +25,12 @@ class MainViewController: UITabBarController {
 //        
 //        addChildViewController(nav)
         
-        addChildViewController(HomeTableViewController(), title: "首页", imageName: "tabbar_home")
-        addChildViewController(MessageTableViewController(), title: "消息", imageName: "tabbar_message_center")
+        addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
+        addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
 
-        addChildViewController(ProfileTableViewController(), title: "我", imageName: "tabbar_profile")
+        addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
 
-        addChildViewController(DiscoverTableViewController(), title: "广场", imageName: "tabbar_discover")
+        addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
 
         
     }
@@ -42,14 +42,27 @@ class MainViewController: UITabBarController {
      - parameter title:           子控制器的标题
      - parameter imageName:       子控制器的图片
      */
-    private func addChildViewController(childController: UIViewController, title:String, imageName:String) {
+    private func addChildViewController(childControllerName: String, title:String, imageName:String) {
         
-        childController.tabBarItem.image = UIImage(named: imageName)
-        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
-        childController.title = title
+        let ns = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
+        
+        
+        let cls:AnyClass? = NSClassFromString(ns + "." + childControllerName)
+        
+        let vcCls = cls as! UIViewController.Type
+        let vc = vcCls.init()
+        
+        
+        
+        
+        
+        
+        vc.tabBarItem.image = UIImage(named: imageName)
+        vc.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
+        vc.title = title
         
         let nav = UINavigationController()
-        nav.addChildViewController(childController)
+        nav.addChildViewController(vc)
         
         addChildViewController(nav)
     
