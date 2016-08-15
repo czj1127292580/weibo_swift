@@ -15,7 +15,7 @@
 		B53FDA2C1D620AF800AD8549 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA2B1D620AF800AD8549 /* MainViewController.swift */; };
 		B53FDA2E1D620B2100AD8549 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA2D1D620B2100AD8549 /* HomeTableViewController.swift */; };
 		B53FDA301D620B2A00AD8549 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA2F1D620B2A00AD8549 /* MessageTableViewController.swift */; };
-		B53FDA321D620B4700AD8549 /* DescoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA311D620B4700AD8549 /* DescoverTableViewController.swift */; };
+		B53FDA321D620B4700AD8549 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA311D620B4700AD8549 /* DiscoverTableViewController.swift */; };
 		B53FDA341D620B5900AD8549 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA331D620B5900AD8549 /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		B53FDA2B1D620AF800AD8549 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B53FDA2D1D620B2100AD8549 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		B53FDA2F1D620B2A00AD8549 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
-		B53FDA311D620B4700AD8549 /* DescoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescoverTableViewController.swift; sourceTree = "<group>"; };
+		B53FDA311D620B4700AD8549 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		B53FDA331D620B5900AD8549 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +154,7 @@
 		B53FDA251D620A3000AD8549 /* Descover */ = {
 			isa = PBXGroup;
 			children = (
-				B53FDA311D620B4700AD8549 /* DescoverTableViewController.swift */,
+				B53FDA311D620B4700AD8549 /* DiscoverTableViewController.swift */,
 			);
 			path = Descover;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				B53FDA2E1D620B2100AD8549 /* HomeTableViewController.swift in Sources */,
 				B53FDA2C1D620AF800AD8549 /* MainViewController.swift in Sources */,
 				B53FDA301D620B2A00AD8549 /* MessageTableViewController.swift in Sources */,
-				B53FDA321D620B4700AD8549 /* DescoverTableViewController.swift in Sources */,
+				B53FDA321D620B4700AD8549 /* DiscoverTableViewController.swift in Sources */,
 				B53FD9F61D62050A00AD8549 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
