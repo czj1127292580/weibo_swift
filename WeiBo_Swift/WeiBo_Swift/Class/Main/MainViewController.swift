@@ -14,23 +14,47 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor.orangeColor()
-
-//        let home = HomeTableViewController()
-//        home.tabBarItem.image = UIImage(named: "tabbar_home")
-//        home.tabBarItem.selectedImage = UIImage(named: "tabbar_home_highlighted")
-//        home.tabBarItem.title = "首页"
-//        home.title = "首页"
-//        let nav = UINavigationController()
-//        nav.addChildViewController(home)
-//        
-//        addChildViewController(nav)
         
-        addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
-        addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+        let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
+        if let jsonPath = path{
+            let jsonData = NSData(contentsOfFile: jsonPath)
+            
+            do{
+                // 有可能发生异常的代码放到这里
+                // 序列化.json数据->Array
+                // try : 发生异常会跳到catch中继续执行
+                // try! : 发生异常程序会直接崩溃
+                let dictArr = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
+                print(dictArr)
+                // 遍历数组
+                // 在swift中，如果需要遍历一个数组，必须明确数据的类型
+                for dict in dictArr as! [[String: String]] {
+                    addChildViewController(dict["vcName"]!, title: dict["title"]!, imageName: dict["imageName"]!)
+                }
 
-        addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+            }catch{
+                // 发生异常之后会执行的代码
+                print(error)
+                
+                // 如果服务器没有，从本地创建控制器
+                addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
+                addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+                
+                addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+                
+                addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
 
-        addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
+            }
+            
+        }
+        
+        
+//        addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
+//        addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+//
+//        addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+//
+//        addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
 
         
     }
