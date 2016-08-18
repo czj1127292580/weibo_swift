@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52D935D1D66110700EA8462 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D935C1D66110700EA8462 /* UIBarButtonItem+Category.swift */; };
+		B52D93631D66136C00EA8462 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D93621D66136C00EA8462 /* TitleButton.swift */; };
 		B53FD9F61D62050A00AD8549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FD9F51D62050A00AD8549 /* AppDelegate.swift */; };
 		B53FD9FB1D62050A00AD8549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53FD9F91D62050A00AD8549 /* Main.storyboard */; };
 		B53FD9FD1D62050A00AD8549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53FD9FC1D62050A00AD8549 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52D935C1D66110700EA8462 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		B52D93621D66136C00EA8462 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleButton.swift; path = ../../../TitleButton.swift; sourceTree = "<group>"; };
 		B53FD9F21D62050A00AD8549 /* WeiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53FD9F51D62050A00AD8549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53FD9FA1D62050A00AD8549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		B53FDA241D620A3000AD8549 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B52D935C1D66110700EA8462 /* UIBarButtonItem+Category.swift */,
+				B52D93621D66136C00EA8462 /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -357,10 +363,12 @@
 				B580C5C61D63588900105F00 /* BaseTableViewController.swift in Sources */,
 				B53FDA2C1D620AF800AD8549 /* MainViewController.swift in Sources */,
 				B53FDA301D620B2A00AD8549 /* MessageTableViewController.swift in Sources */,
+				B52D935D1D66110700EA8462 /* UIBarButtonItem+Category.swift in Sources */,
 				B580C5CA1D635F8700105F00 /* UIView+AutoLayout.swift in Sources */,
 				B53FDA321D620B4700AD8549 /* DiscoverTableViewController.swift in Sources */,
 				B580C5C81D635AF300105F00 /* VisitorView.swift in Sources */,
 				B53FD9F61D62050A00AD8549 /* AppDelegate.swift in Sources */,
+				B52D93631D66136C00EA8462 /* TitleButton.swift in Sources */,
 				B53FDA3B1D621A7B00AD8549 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
