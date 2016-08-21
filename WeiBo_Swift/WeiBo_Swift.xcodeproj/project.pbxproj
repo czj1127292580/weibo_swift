@@ -21,6 +21,9 @@
 		B53FDA341D620B5900AD8549 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA331D620B5900AD8549 /* ProfileTableViewController.swift */; };
 		B53FDA381D62119100AD8549 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = B53FDA361D62119100AD8549 /* MainVCSettings.json */; };
 		B53FDA3B1D621A7B00AD8549 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53FDA3A1D621A7B00AD8549 /* NullViewController.swift */; };
+		B57A837A1D68A91800A7E050 /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57A83791D68A91800A7E050 /* PopoverViewController.storyboard */; };
+		B57A837C1D68AE9400A7E050 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A837B1D68AE9400A7E050 /* PopoverPresentationController.swift */; };
+		B57A837E1D69F7C100A7E050 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A837D1D69F7C100A7E050 /* PopoverAnimator.swift */; };
 		B580C5C61D63588900105F00 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C51D63588900105F00 /* BaseTableViewController.swift */; };
 		B580C5C81D635AF300105F00 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C71D635AF300105F00 /* VisitorView.swift */; };
 		B580C5CA1D635F8700105F00 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C91D635F8700105F00 /* UIView+AutoLayout.swift */; };
@@ -64,6 +67,9 @@
 		B53FDA331D620B5900AD8549 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		B53FDA361D62119100AD8549 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		B53FDA3A1D621A7B00AD8549 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		B57A83791D68A91800A7E050 /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
+		B57A837B1D68AE9400A7E050 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		B57A837D1D69F7C100A7E050 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		B580C5C51D63588900105F00 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B580C5C71D635AF300105F00 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B580C5C91D635F8700105F00 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 		B53FDA261D620A3000AD8549 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B57A83781D68A8DE00A7E050 /* PopOver */,
 				B53FDA2D1D620B2100AD8549 /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -225,6 +232,16 @@
 				B53FDA3A1D621A7B00AD8549 /* NullViewController.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B57A83781D68A8DE00A7E050 /* PopOver */ = {
+			isa = PBXGroup;
+			children = (
+				B57A83791D68A91800A7E050 /* PopoverViewController.storyboard */,
+				B57A837B1D68AE9400A7E050 /* PopoverPresentationController.swift */,
+				B57A837D1D69F7C100A7E050 /* PopoverAnimator.swift */,
+			);
+			path = PopOver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +350,7 @@
 			files = (
 				B53FD9FD1D62050A00AD8549 /* Assets.xcassets in Resources */,
 				B53FD9FB1D62050A00AD8549 /* Main.storyboard in Resources */,
+				B57A837A1D68A91800A7E050 /* PopoverViewController.storyboard in Resources */,
 				B53FDA381D62119100AD8549 /* MainVCSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57A837C1D68AE9400A7E050 /* PopoverPresentationController.swift in Sources */,
 				B53FDA341D620B5900AD8549 /* ProfileTableViewController.swift in Sources */,
 				B53FDA2E1D620B2100AD8549 /* HomeTableViewController.swift in Sources */,
 				B580C5C61D63588900105F00 /* BaseTableViewController.swift in Sources */,
@@ -365,6 +384,7 @@
 				B53FDA301D620B2A00AD8549 /* MessageTableViewController.swift in Sources */,
 				B52D935D1D66110700EA8462 /* UIBarButtonItem+Category.swift in Sources */,
 				B580C5CA1D635F8700105F00 /* UIView+AutoLayout.swift in Sources */,
+				B57A837E1D69F7C100A7E050 /* PopoverAnimator.swift in Sources */,
 				B53FDA321D620B4700AD8549 /* DiscoverTableViewController.swift in Sources */,
 				B580C5C81D635AF300105F00 /* VisitorView.swift in Sources */,
 				B53FD9F61D62050A00AD8549 /* AppDelegate.swift in Sources */,
@@ -507,7 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WeiBo_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.v.tech.WeiBo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -520,7 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WeiBo_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.v.tech.WeiBo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
