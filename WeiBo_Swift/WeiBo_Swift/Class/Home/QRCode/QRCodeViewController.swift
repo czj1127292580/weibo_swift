@@ -10,10 +10,6 @@ import UIKit
 import AVFoundation
 
 class QRCodeViewController: UIViewController, UITabBarDelegate {
-
-    @IBAction func closeBtnClick(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
     
     // 冲击波视图
     @IBOutlet weak var scanLineView: UIImageView!
@@ -21,6 +17,11 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var containerHeightCons: NSLayoutConstraint!
     // 冲击波视图顶部约束
     @IBOutlet weak var scanLineCons: NSLayoutConstraint!
+    
+    @IBAction func closeBtnClick(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // 底部视图
     @IBOutlet weak var customTabBar: UITabBar!
     override func viewDidLoad() {
@@ -54,9 +55,9 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         }
         // 3、将输入和输出都添加到会话中
         session.addInput(deviceInput)
-        print(output.metadataObjectTypes)
+        print(output.availableMetadataObjectTypes)
         session.addOutput(output)
-        print(output.metadataObjectTypes)
+        print(output.availableMetadataObjectTypes)
         // 4、设置输出能够解析的数据类型
         // 注意：设置能够解析的数据类型，一定要在输出对象添加到会话之后设置，否则会报错
         output.metadataObjectTypes = output.availableMetadataObjectTypes
@@ -113,7 +114,7 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
     // 拿到输出设备
     private lazy var deviceInput: AVCaptureDeviceInput? = {
         // 获取摄像头
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio)
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
         do{
             // 创建输入对象
