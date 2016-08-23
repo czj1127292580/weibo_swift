@@ -24,6 +24,9 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
     
     // 底部视图
     @IBOutlet weak var customTabBar: UITabBar!
+    
+    // 保存扫描到的结果
+    @IBOutlet weak var resultLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,13 +61,20 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         print(output.availableMetadataObjectTypes)
         session.addOutput(output)
         print(output.availableMetadataObjectTypes)
+        
         // 4、设置输出能够解析的数据类型
         // 注意：设置能够解析的数据类型，一定要在输出对象添加到会话之后设置，否则会报错
         output.metadataObjectTypes = output.availableMetadataObjectTypes
+        
         // 5、设置输出对象的代理，只要解析成功就会通知代理
         output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        
         // 添加预览图层
         view.layer.insertSublayer(previewLayer, atIndex: 0)
+        
+        // 添加绘制图层到预览图层上
+        previewLayer.addSublayer(drawLayer)
+        
         // 6、告诉session开始扫描
         session.startRunning()
     }
@@ -135,6 +145,13 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         layer.frame = UIScreen.mainScreen().bounds
         return layer
     }()
+    
+    // 创建用于绘制边线的图层
+    private lazy var drawLayer: CALayer = {
+        let layer = CALayer()
+        layer.frame = UIScreen.mainScreen().bounds
+        return layer
+    }()
 
 }
 
@@ -142,7 +159,84 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate{
     // 只要解析到数据就会调用
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!){
     
-        print(metadataObjects)
+        // 0、清空图层
+        clearCorners()
+         // 1、获取扫描到的数据
+        // 注意：要使用stringValue
+        print(metadataObjects.last?.stringValue)
+        resultLabel.text = metadataObjects.last?.stringValue
+     
+        // 2、获取扫描到的位置
+//        print(metadataObjects.last)
+        // 2.1坐标转换
+        for object in metadataObjects {
+            // 2.1.1 判断当前获取到的数据，是否是机器可识别的类型
+            if object is AVMetadataMachineReadableCodeObject {
+                // 2.1.2 将坐标corners转换为界面可识别的坐标
+                let codeObject = previewLayer.transformedMetadataObjectForMetadataObject(object as! AVMetadataObject) as! AVMetadataMachineReadableCodeObject
+                print(codeObject)
+                // 2.1.3 绘制图形
+                drawCorners(codeObject)
+            }
+        }
+    }
+    
+    /**
+     绘制图形
+     
+     - parameter codeObject: 保存了坐标的对象
+     */
+    private func drawCorners(codeObject: AVMetadataMachineReadableCodeObject){
+        
+        if codeObject.corners.isEmpty {
+            return
+        }
+        // 1、创建一个图层
+        let layer = CAShapeLayer()
+        layer.lineWidth = 4
+        layer.strokeColor = UIColor.redColor().CGColor
+        layer.fillColor = UIColor.clearColor().CGColor
+        // 2、创建路径
+//        layer.path = UIBezierPath(rect: CGRectMake(100, 100, 200, 200)).CGPath
+        let path = UIBezierPath()
+        var point = CGPointZero
+        var index: Int = 0
+        
+        
+        // 2.1 移动到第一个点
+//        print(codeObject.corners.last)
+        // 从corners数组中取出第0个元素，将这个字典中的x/y赋值给point
+        CGPointMakeWithDictionaryRepresentation((codeObject.corners[index++] as! CFDictionaryRef), &point)
+        
+        path.moveToPoint(point)
+        // 2.2 移动到其他的点
+        while index < codeObject.corners.count {
+            CGPointMakeWithDictionaryRepresentation((codeObject.corners[index++] as! CFDictionaryRef), &point)
+            path.addLineToPoint(point)
+        }
+        
+        // 2.3 关闭路径
+        path.closePath()
+        
+        // 2.4  绘制路径
+        layer.path = path.CGPath
+        // 3、将绘制好的图层添加到drawLayer上
+        drawLayer.addSublayer(layer)
+    }
+    
+    /**
+     清空边线
+     */
+    private func clearCorners(){
+        // 1、判断drawLayer上是否有其它图层
+        if drawLayer.sublayers == nil || drawLayer.sublayers?.count == 0 {
+            return
+        }
+        
+        // 2、移除所有子图层
+        for subLayer in drawLayer.sublayers! {
+            subLayer.removeFromSuperlayer()
+        }
     }
 }
 

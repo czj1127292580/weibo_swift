@@ -53,14 +53,23 @@
                                     <constraint firstItem="8cb-YG-SQU" firstAttribute="centerX" secondItem="fWR-CI-emw" secondAttribute="centerX" id="ycu-5A-EPC"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫面之后即可显示数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-N2-zyP">
+                                <rect key="frame" x="215" y="104" width="170" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.1786899599" blue="0.2070135025" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="58w-Iq-PYd" firstAttribute="leading" secondItem="49v-qe-aop" secondAttribute="leading" id="55p-Vh-2kZ"/>
                             <constraint firstItem="fWR-CI-emw" firstAttribute="centerX" secondItem="49v-qe-aop" secondAttribute="centerX" id="LsU-F1-1ZP"/>
+                            <constraint firstItem="lDg-N2-zyP" firstAttribute="top" secondItem="HBa-vs-Oc8" secondAttribute="bottom" constant="40" id="aKK-Q2-dpu"/>
                             <constraint firstItem="fWR-CI-emw" firstAttribute="centerY" secondItem="49v-qe-aop" secondAttribute="centerY" id="bGl-3a-S5K"/>
                             <constraint firstItem="dyQ-4I-yzG" firstAttribute="top" secondItem="58w-Iq-PYd" secondAttribute="bottom" id="dWk-ON-q4l"/>
                             <constraint firstAttribute="trailing" secondItem="58w-Iq-PYd" secondAttribute="trailing" id="gIF-tc-vl2"/>
+                            <constraint firstItem="lDg-N2-zyP" firstAttribute="centerX" secondItem="49v-qe-aop" secondAttribute="centerX" id="k8D-uJ-d75"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H5h-Cj-RhG">
@@ -74,6 +83,7 @@
                     <connections>
                         <outlet property="containerHeightCons" destination="Xin-ux-ufn" id="Bku-eB-i8I"/>
                         <outlet property="customTabBar" destination="58w-Iq-PYd" id="P6I-Ce-8ek"/>
+                        <outlet property="resultLabel" destination="lDg-N2-zyP" id="cgk-cP-hY9"/>
                         <outlet property="scanLineCons" destination="kYq-Ia-cke" id="qya-le-0oZ"/>
                         <outlet property="scanLineView" destination="8cb-YG-SQU" id="I3N-UO-hqh"/>
                     </connections>
