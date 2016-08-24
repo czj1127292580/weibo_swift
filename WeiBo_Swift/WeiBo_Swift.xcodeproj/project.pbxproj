@@ -29,6 +29,7 @@
 		B580C5C61D63588900105F00 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C51D63588900105F00 /* BaseTableViewController.swift */; };
 		B580C5C81D635AF300105F00 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C71D635AF300105F00 /* VisitorView.swift */; };
 		B580C5CA1D635F8700105F00 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580C5C91D635F8700105F00 /* UIView+AutoLayout.swift */; };
+		B5F29EF51D6DEBB50074E89F /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F29EF41D6DEBB50074E89F /* QRCodeCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B580C5C51D63588900105F00 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B580C5C71D635AF300105F00 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		B580C5C91D635F8700105F00 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		B5F29EF41D6DEBB50074E89F /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			children = (
 				B54800DA1D69FFEC00B26CD5 /* QRCodeViewController.storyboard */,
 				B54800DC1D6A01BE00B26CD5 /* QRCodeViewController.swift */,
+				B5F29EF41D6DEBB50074E89F /* QRCodeCardViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F29EF51D6DEBB50074E89F /* QRCodeCardViewController.swift in Sources */,
 				B57A837C1D68AE9400A7E050 /* PopoverPresentationController.swift in Sources */,
 				B53FDA341D620B5900AD8549 /* ProfileTableViewController.swift in Sources */,
 				B53FDA2E1D620B2100AD8549 /* HomeTableViewController.swift in Sources */,

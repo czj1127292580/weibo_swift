@@ -60,16 +60,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-9j-ZAh">
+                                <rect key="frame" x="268" y="480" width="64" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="我的名片" backgroundImage="qrcode_button_background">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="myCardBtnClick:" destination="hJe-WW-azL" eventType="touchUpInside" id="eWq-ZL-x8R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="58w-Iq-PYd" firstAttribute="leading" secondItem="49v-qe-aop" secondAttribute="leading" id="55p-Vh-2kZ"/>
                             <constraint firstItem="fWR-CI-emw" firstAttribute="centerX" secondItem="49v-qe-aop" secondAttribute="centerX" id="LsU-F1-1ZP"/>
+                            <constraint firstItem="ulz-9j-ZAh" firstAttribute="top" secondItem="fWR-CI-emw" secondAttribute="bottom" constant="30" id="Vm5-ZU-oBh"/>
                             <constraint firstItem="lDg-N2-zyP" firstAttribute="top" secondItem="HBa-vs-Oc8" secondAttribute="bottom" constant="40" id="aKK-Q2-dpu"/>
                             <constraint firstItem="fWR-CI-emw" firstAttribute="centerY" secondItem="49v-qe-aop" secondAttribute="centerY" id="bGl-3a-S5K"/>
                             <constraint firstItem="dyQ-4I-yzG" firstAttribute="top" secondItem="58w-Iq-PYd" secondAttribute="bottom" id="dWk-ON-q4l"/>
                             <constraint firstAttribute="trailing" secondItem="58w-Iq-PYd" secondAttribute="trailing" id="gIF-tc-vl2"/>
                             <constraint firstItem="lDg-N2-zyP" firstAttribute="centerX" secondItem="49v-qe-aop" secondAttribute="centerX" id="k8D-uJ-d75"/>
+                            <constraint firstItem="ulz-9j-ZAh" firstAttribute="centerX" secondItem="49v-qe-aop" secondAttribute="centerX" id="ngO-AO-Ixi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="H5h-Cj-RhG">
@@ -112,6 +124,7 @@
     </scenes>
     <resources>
         <image name="qrcode_border" width="51" height="51"/>
+        <image name="qrcode_button_background" width="34" height="32"/>
         <image name="qrcode_scanline_barcode" width="248" height="124"/>
         <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
         <image name="qrcode_tabbar_icon_qrcode" width="40" height="40"/>
