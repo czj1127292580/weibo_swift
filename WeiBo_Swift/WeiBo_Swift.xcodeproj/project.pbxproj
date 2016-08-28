@@ -10,6 +10,8 @@
 		B5189EE11D72A0AB00DF3A89 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE01D72A0AB00DF3A89 /* NetWorkTools.swift */; };
 		B5189EE31D72AA4B00DF3A89 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE21D72AA4B00DF3A89 /* UserAccount.swift */; };
 		B5189EE51D72B4FE00DF3A89 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE41D72B4FE00DF3A89 /* String+Category.swift */; };
+		B5189EE81D72CCD000DF3A89 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE71D72CCD000DF3A89 /* NewFeatureViewController.swift */; };
+		B5189EEA1D73407900DF3A89 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE91D73407900DF3A89 /* WelcomeViewController.swift */; };
 		B51E267B1D6F4638000B6E03 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E267A1D6F4638000B6E03 /* OAuthViewController.swift */; };
 		B52D935D1D66110700EA8462 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D935C1D66110700EA8462 /* UIBarButtonItem+Category.swift */; };
 		B52D93631D66136C00EA8462 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D93621D66136C00EA8462 /* TitleButton.swift */; };
@@ -60,6 +62,8 @@
 		B5189EE01D72A0AB00DF3A89 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		B5189EE21D72AA4B00DF3A89 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		B5189EE41D72B4FE00DF3A89 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		B5189EE71D72CCD000DF3A89 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
+		B5189EE91D73407900DF3A89 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B51E267A1D6F4638000B6E03 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		B52D935C1D66110700EA8462 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		B52D93621D66136C00EA8462 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleButton.swift; path = ../../../TitleButton.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B5189EE61D72CC9E00DF3A89 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				B5189EE71D72CCD000DF3A89 /* NewFeatureViewController.swift */,
+				B5189EE91D73407900DF3A89 /* WelcomeViewController.swift */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		B51E26791D6F4619000B6E03 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +215,7 @@
 		B53FDA231D620A3000AD8549 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				B5189EE61D72CC9E00DF3A89 /* NewFeature */,
 				B51E26791D6F4619000B6E03 /* OAuth */,
 				B53FDA2A1D620AD900AD8549 /* Main */,
 				B53FDA241D620A3000AD8549 /* Common */,
@@ -505,6 +519,8 @@
 				B580C5CA1D635F8700105F00 /* UIView+AutoLayout.swift in Sources */,
 				B57A837E1D69F7C100A7E050 /* PopoverAnimator.swift in Sources */,
 				B5189EE51D72B4FE00DF3A89 /* String+Category.swift in Sources */,
+				B5189EEA1D73407900DF3A89 /* WelcomeViewController.swift in Sources */,
+				B5189EE81D72CCD000DF3A89 /* NewFeatureViewController.swift in Sources */,
 				B54800DD1D6A01BE00B26CD5 /* QRCodeViewController.swift in Sources */,
 				B53FDA321D620B4700AD8549 /* DiscoverTableViewController.swift in Sources */,
 				B580C5C81D635AF300105F00 /* VisitorView.swift in Sources */,

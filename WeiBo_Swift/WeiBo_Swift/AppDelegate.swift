@@ -23,9 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = WelcomeViewController()
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    private func isNeesUpdate() -> Bool{
+    
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""
+        
+        if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending {
+            
+            // iOS7以后不用调用同步方法
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            return true
+        }
+        
+        return false
     }
 
 }

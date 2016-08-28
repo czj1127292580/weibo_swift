@@ -124,8 +124,19 @@ extension OAuthViewController: UIWebViewDelegate{
             
             let account = UserAccount(dict: JSON as! [String : AnyObject])
             
-            // 归档模型
-            account.saveAccount()
+            // 获取用户信息
+//            account.loadUserInfo()
+            account.loadUserInfo({ (account, error) in
+                if account != nil{
+                    account?.saveAccount()
+
+                }
+                SVProgressHUD.showInfoWithStatus("网络不给力...", maskType: SVProgressHUDMaskType.Black)
+            })
+            
+            // 由于加载数据是异步的，所以不能在这里保存用户信息
+//            // 归档模型
+//            account.saveAccount()
             
             }) { (_, error) in
                 
