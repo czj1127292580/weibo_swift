@@ -130,6 +130,8 @@ extension OAuthViewController: UIWebViewDelegate{
                 if account != nil{
                     account?.saveAccount()
 
+                    NSNotificationCenter.defaultCenter().postNotificationName(ZJSwitchRootViewControllerKey, object: false)
+                    return
                 }
                 SVProgressHUD.showInfoWithStatus("网络不给力...", maskType: SVProgressHUDMaskType.Black)
             })

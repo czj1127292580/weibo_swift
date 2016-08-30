@@ -8,6 +8,8 @@
 
 import UIKit
 
+let ZJSwitchRootViewControllerKey = "ZJSwitchRootViewControllerKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,15 +19,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // 注册一个通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(switchRootViewController), name: ZJSwitchRootViewControllerKey, object: nil)
+        
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         
-        window?.rootViewController = WelcomeViewController()
+        window?.rootViewController = defaultController()
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func switchRootViewController(notify: NSNotification){
+        
+        if notify.object as! Bool {
+            window?.rootViewController = MainViewController()
+        } else {
+            window?.rootViewController = WelcomeViewController()
+        }
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    private func defaultController() -> UIViewController {
+        
+        if UserAccount.userLogin() {
+            return isNeesUpdate() ? NewFeatureViewController() : WelcomeViewController()
+        }
+        return MainViewController()
     }
     
     private func isNeesUpdate() -> Bool{

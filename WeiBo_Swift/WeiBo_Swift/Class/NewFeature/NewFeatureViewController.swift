@@ -102,7 +102,7 @@ private class NewFeatureCell: UICollectionViewCell{
     
     @objc func startBtnClick() {
 
-    
+        NSNotificationCenter.defaultCenter().postNotificationName(ZJSwitchRootViewControllerKey, object: true)
     }
     
     private func setUpUI() {

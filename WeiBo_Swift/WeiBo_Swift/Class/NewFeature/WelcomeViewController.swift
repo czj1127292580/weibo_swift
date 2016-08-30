@@ -58,6 +58,7 @@ class WelcomeViewController: UIViewController {
                 self.messageLabel.alpha = 1.0
                 }, completion: { (_) -> Void in
                     print("OK")
+                    NSNotificationCenter.defaultCenter().postNotificationName(ZJSwitchRootViewControllerKey, object: true)
             })
         }
         
