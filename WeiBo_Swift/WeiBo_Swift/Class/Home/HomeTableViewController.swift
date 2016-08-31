@@ -8,8 +8,18 @@
 
 import UIKit
 
+let ZJHomeReuseIdentifier = "ZJHomeReuseIdentifier"
+
 class HomeTableViewController: BaseTableViewController {
 
+    // 保存微博数组
+    var statuses = [Status]?(){
+        didSet{
+            // 当别人设置完数据，刷新表格
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +32,29 @@ class HomeTableViewController: BaseTableViewController {
         // 初始化导航条
         setupNav()
         
+        // 注册一个cell
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: ZJHomeReuseIdentifier)
+        
         // 注册通知，监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: XMGPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: XMGPopoverAnimatorWillDismiss, object: nil)
+        
+        // 加载微博数据
+        loadData()
+    }
 
+    /**
+     获取微博数据
+     */
+    private func loadData(){
+     
+        Status.loadStatuses { (models, error) in
+            
+            if error != nil{
+                return
+            }
+            self.statuses = models
+        }
     }
     
     // 相当于OC只能给的dealloc
@@ -40,7 +69,6 @@ class HomeTableViewController: BaseTableViewController {
         // 修改标题按钮的状态
         let titleBtn = navigationItem.titleView as! TitleButton
         titleBtn.selected = !titleBtn.selected
-        
         
     }
     
@@ -98,5 +126,18 @@ class HomeTableViewController: BaseTableViewController {
         return pa
     }()
     
+}
 
+extension HomeTableViewController{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(ZJHomeReuseIdentifier, forIndexPath: indexPath)
+        let status = statuses![indexPath.row]
+        cell.textLabel?.text = status.text
+        
+        return cell
+    }
 }
