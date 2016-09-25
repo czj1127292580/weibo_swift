@@ -33,8 +33,12 @@ class HomeTableViewController: BaseTableViewController {
         setupNav()
         
         // 注册一个cell
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: ZJHomeReuseIdentifier)
+        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: ZJHomeReuseIdentifier)
         
+//        tableView.rowHeight = 200
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         // 注册通知，监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: XMGPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: XMGPopoverAnimatorWillDismiss, object: nil)
@@ -134,10 +138,10 @@ extension HomeTableViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ZJHomeReuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(ZJHomeReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
         let status = statuses![indexPath.row]
-        cell.textLabel?.text = status.text
-        
+//        cell.textLabel?.text = status.text
+        cell.status = status
         return cell
     }
 }
