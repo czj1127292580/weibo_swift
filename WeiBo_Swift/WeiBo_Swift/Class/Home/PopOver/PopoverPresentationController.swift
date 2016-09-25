@@ -20,7 +20,7 @@ class PopoverPresentationController: UIPresentationController {
      
      - returns: 负责转场动画的对象
      */
-    override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
+    override init(presentedViewController: UIViewController, presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
         
         print(presentedViewController)

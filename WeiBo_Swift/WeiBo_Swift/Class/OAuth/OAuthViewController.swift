@@ -52,7 +52,7 @@ extension OAuthViewController: UIWebViewDelegate{
         // 判断是否是授权回调页，如果不是继续加载
         let urlStr = request.URL!.absoluteString
         
-        if !urlStr.hasPrefix(WB_redirect_uri) {
+        if !urlStr!.hasPrefix(WB_redirect_uri) {
             
             return true
         }

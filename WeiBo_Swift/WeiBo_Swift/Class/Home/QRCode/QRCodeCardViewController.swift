@@ -82,7 +82,7 @@ class QRCodeCardViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         // 6、返回合成好的图片
-        return newImage
+        return newImage!
         
     }
     
@@ -101,11 +101,11 @@ class QRCodeCardViewController: UIViewController {
         // 1.创建bitmap;
         let width = CGRectGetWidth(extent) * scale
         let height = CGRectGetHeight(extent) * scale
-        let cs: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()!
+        let cs: CGColorSpaceRef = CGColorSpaceCreateDeviceGray()
         let bitmapRef = CGBitmapContextCreate(nil, Int(width), Int(height), 8, 0, cs, 0)!
         
         let context = CIContext(options: nil)
-        let bitmapImage: CGImageRef = context.createCGImage(image, fromRect: extent)
+        let bitmapImage: CGImageRef = context.createCGImage(image, fromRect: extent)!
         
         CGContextSetInterpolationQuality(bitmapRef,  CGInterpolationQuality.None)
         CGContextScaleCTM(bitmapRef, scale, scale);

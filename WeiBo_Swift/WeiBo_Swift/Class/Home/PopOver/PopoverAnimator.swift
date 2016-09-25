@@ -23,9 +23,9 @@ class PopoverAnimator: NSObject ,UIViewControllerTransitioningDelegate, UIViewCo
     
     // 实现代理方法,告诉系统谁来负责专场动画
     // UIPresentationController iOS8推出的专门用于负责转场动画的
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController?, sourceViewController source: UIViewController) -> UIPresentationController? {
         
-        let pc = PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        let pc = PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting!)
         
         // 设置菜单的大小
         pc.presentFrame = presentFrame
@@ -97,7 +97,7 @@ class PopoverAnimator: NSObject ,UIViewControllerTransitioningDelegate, UIViewCo
             toView?.transform = CGAffineTransformMakeScale(1.0, 0.0)
             
             // 注意：一定要将视图添加到容器上
-            transitionContext.containerView()?.addSubview(toView!)
+            transitionContext.containerView().addSubview(toView!)
             
             // 设置锚点
             toView?.layer.anchorPoint = CGPoint(x: 0.5, y: 0)

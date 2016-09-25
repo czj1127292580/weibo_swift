@@ -126,7 +126,7 @@ class VisitorView: UIView {
         btn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
         btn.setTitle("登录", forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "loginBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(loginBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
@@ -136,7 +136,7 @@ class VisitorView: UIView {
         btn.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
         btn.setTitle("注册", forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "regiserBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(regiserBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
