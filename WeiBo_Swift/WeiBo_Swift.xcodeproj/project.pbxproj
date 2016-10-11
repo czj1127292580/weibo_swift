@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B501F3F11D9976A600493030 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B501F3F01D9976A600493030 /* NSDate+Category.swift */; };
 		B5189EE11D72A0AB00DF3A89 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE01D72A0AB00DF3A89 /* NetWorkTools.swift */; };
 		B5189EE31D72AA4B00DF3A89 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE21D72AA4B00DF3A89 /* UserAccount.swift */; };
 		B5189EE51D72B4FE00DF3A89 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5189EE41D72B4FE00DF3A89 /* String+Category.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		2B46F95D861B5792246F933B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5C92FEACB0C7C0C54988F71E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B501F3F01D9976A600493030 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
 		B5189EE01D72A0AB00DF3A89 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		B5189EE21D72AA4B00DF3A89 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		B5189EE41D72B4FE00DF3A89 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				B580C5C91D635F8700105F00 /* UIView+AutoLayout.swift */,
 				B5189EE01D72A0AB00DF3A89 /* NetWorkTools.swift */,
 				B5189EE41D72B4FE00DF3A89 /* String+Category.swift */,
+				B501F3F01D9976A600493030 /* NSDate+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B501F3F11D9976A600493030 /* NSDate+Category.swift in Sources */,
 				B5F29EF51D6DEBB50074E89F /* QRCodeCardViewController.swift in Sources */,
 				B5B0C5601D9815B5001FBF8B /* StatusTableViewCell.swift in Sources */,
 				B57A837C1D68AE9400A7E050 /* PopoverPresentationController.swift in Sources */,

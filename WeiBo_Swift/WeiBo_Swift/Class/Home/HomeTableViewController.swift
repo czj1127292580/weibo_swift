@@ -36,8 +36,9 @@ class HomeTableViewController: BaseTableViewController {
         tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: ZJHomeReuseIdentifier)
         
 //        tableView.rowHeight = 200
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         // 注册通知，监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: XMGPopoverAnimatorWillShow, object: nil)
@@ -130,6 +131,13 @@ class HomeTableViewController: BaseTableViewController {
         return pa
     }()
     
+    /// 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
+    var rowCache: [Int: CGFloat] = [Int: CGFloat]()
+    
+    override func didReceiveMemoryWarning() {
+        // 清空缓存
+        rowCache.removeAll()
+    }
 }
 
 extension HomeTableViewController{
@@ -143,5 +151,33 @@ extension HomeTableViewController{
 //        cell.textLabel?.text = status.text
         cell.status = status
         return cell
+    }
+    
+    // 返回行高
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // 1.取出对应行的模型
+        let status = statuses![indexPath.row]
+        
+        // 2.判断缓存中有没有
+        if let height = rowCache[status.id]
+        {
+            print("从缓存中获取")
+            return height
+        }
+        
+        // 3.拿到cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(ZJHomeReuseIdentifier) as! StatusTableViewCell
+        // 注意点:不要使用以下方法获取, 在某些版本或者模拟器会有bug
+        //        tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>, forIndexPath: <#T##NSIndexPath#>)
+        
+        // 4.拿到对应行的行高
+        let rowHeight = cell.rowHeight(status)
+        
+        // 5.缓存行高
+        rowCache[status.id] = rowHeight
+        print("重新计算")
+        
+        // 6.返回行高
+        return rowHeight
     }
 }

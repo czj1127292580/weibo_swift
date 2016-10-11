@@ -48,6 +48,18 @@ class User: NSObject {
     // 保存当前用户的认证图片
     var verifiedImage: UIImage?
     
+    var mbrank: Int = 0 {
+        didSet{
+            if mbrank > 0 && mbrank < 7 {
+                mbrankImage = UIImage(named: "common_icon_membership_level" + "\(mbrank)")
+            }
+        }
+    }
+    
+    var mbrankImage: UIImage?
+    
+    
+    // 字典转模型
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeysWithDictionary(dict)
